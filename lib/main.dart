@@ -1,26 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:the_dart_side/myHeader.dart';
+import 'package:the_dart_side/src/app.dart';
 
 void main() => runApp(MyApp());
 
-class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: SafeArea(
-        bottom: false,
-        child: Scaffold(
-          appBar: MyHeader(leftIcon: Text('Adopta un Dash'), title: 'Hola',),
-          body: Center(
-            child: Text('The Dart Side'),
-          ),
-        ),
-      ),
-    );
-  }
-}
+
+/*
+* Agregar font utilizada en el nombre del invitado y en el titulo del canal
+* las fuentes en la carpeta del canal
+*
+* crear imagen para general el icono del app con Dash Vader utilizando el package de icons
+*
+* despues de esto crear el branch donde estara el appbar personalizada de esta forma siempre se tendre
+* el boilerplate
+*
+* */
