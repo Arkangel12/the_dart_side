@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'The Dart Side',
       theme: ThemeData.dark(),
-      home: MyHomePage(title: 'The Dart Side - Demo'),
+      home: MyHomePage(title: 'The Dart Side'),
     );
   }
 }
