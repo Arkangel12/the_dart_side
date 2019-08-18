@@ -1,16 +1,20 @@
-# the_dart_side
+# The Dart Side
 
-A new Flutter project.
+Este project de Flutter es para el seguimiento al 
+canal de youtube [The Dart Side](https://www.youtube.com/channel/UCpAayn8kU37z94aGB_VJ8gw)
+de [Argel Bejarano](https://twitter.com/ArkangelB) y  [Diego Velasquez](https://twitter.com/diegoveloper).
 
-## Getting Started
+## Recursos:
 
-This project is a starting point for a Flutter application.
+- [Documentación en linea](https://flutter-es.io/docs)
+- [Lab: Escribe tu primera app en Flutter](https://flutter-es.io/docs/get-started/codelab)
+- [Cookbook: Ejemplos de Flutter](https://flutter-es.io/docs/cookbook)
 
-A few resources to get you started if this is your first Flutter project:
+### En el branch master podrán ver como:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Agregar e implementar Assets
+- Agregar e implementar Fonts
+- Agregar e implementar Icons utilizando (tamaño de png recomendado 432x432) - [Flutter launch icons](https://pub.dev/packages/flutter_launcher_icons)
+- Asigar el nombre que muestra app: 
+    _Android_: android/app/src/main/AndroidManifest.xml
+    _iOS_: ios/Runner/Info.plist
