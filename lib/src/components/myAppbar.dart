@@ -41,9 +41,9 @@ class MyAppbar extends StatelessWidget implements PreferredSizeWidget {
           Expanded(
             flex: 4,
             child: InkWell(
-              onTap: rightFunction ?? null,
+              onTap: rightFunction,
               child: Container(
-                child: rightWidget ?? null,
+                child: rightWidget,
               ),
             ),
           ),
