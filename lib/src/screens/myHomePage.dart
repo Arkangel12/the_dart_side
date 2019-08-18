@@ -21,32 +21,35 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title, style: TextStyle(fontFamily: 'Starjout'),),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'Ejemplo básico de counter: ',
-              style: TextStyle(fontFamily: 'Starjedi'),
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context)
-                  .textTheme
-                  .display1
-                  .apply(fontFamily: 'Starjhol'),
-            ),
-          ],
+    return SafeArea(
+      bottom: false,
+      child: Scaffold(
+        appBar: MyAppbar(
+          title: Text(widget.title, style: TextStyle(fontFamily: 'Starjout'),),
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text(
+                'Ejemplo básico de counter: ',
+                style: TextStyle(fontFamily: 'Starjedi'),
+              ),
+              Text(
+                '$_counter',
+                style: Theme.of(context)
+                    .textTheme
+                    .display1
+                    .apply(fontFamily: 'Starjhol'),
+              ),
+            ],
+          ),
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: _incrementCounter,
+          tooltip: 'Increment',
+          child: Icon(Icons.add),
+        ),
       ),
     );
   }
