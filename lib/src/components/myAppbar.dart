@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class MyHeader extends StatelessWidget implements PreferredSizeWidget {
+class MyAppbar extends StatelessWidget implements PreferredSizeWidget {
   final Widget leftWidget;
   final Function leftFunction;
   final Widget title;
@@ -8,7 +8,7 @@ class MyHeader extends StatelessWidget implements PreferredSizeWidget {
   final Widget rightWidget;
   final Function rightFunction;
 
-  const MyHeader({
+  const MyAppbar({
     Key key,
     this.leftWidget,
     this.leftFunction,
