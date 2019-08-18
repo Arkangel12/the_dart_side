@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:the_dart_side/src/components/myHeader.dart';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
@@ -24,6 +25,9 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title, style: TextStyle(fontFamily: 'Starjout'),),
       ),
+//      appBar: MyHeader(
+//        title: Text(widget.title, style: TextStyle(fontFamily: 'Starjedi'),)
+//      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -34,7 +38,10 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Text(
               '$_counter',
-              style: Theme.of(context).textTheme.display1.apply(fontFamily: 'Starjhol'),
+              style: Theme.of(context)
+                  .textTheme
+                  .display1
+                  .apply(fontFamily: 'Starjhol'),
             ),
           ],
         ),
