@@ -22,19 +22,26 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title, style: TextStyle(fontFamily: 'Starjout'),),
+        title: Text(
+          widget.title,
+          style: TextStyle(fontFamily: 'Starjout'),
+        ),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            Image.asset("assets/images/dash_1.png"),
             Text(
               'Ejemplo básico de counter: ',
               style: TextStyle(fontFamily: 'Starjedi'),
             ),
             Text(
               '$_counter',
-              style: Theme.of(context).textTheme.display1.apply(fontFamily: 'Starjhol'),
+              style: Theme.of(context)
+                  .textTheme
+                  .display1
+                  .apply(fontFamily: 'Starjhol'),
             ),
           ],
         ),
