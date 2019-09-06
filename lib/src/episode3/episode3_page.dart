@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:the_dart_side/src/components/myAppbar.dart';
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+import 'myAppbar.dart';
+
+class Episode3Page extends StatefulWidget {
+  Episode3Page({Key key, this.title}) : super(key: key);
 
   final String title;
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _Episode3PageState createState() => _Episode3PageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _Episode3PageState extends State<Episode3Page> {
   int _counter = 0;
 
   void _incrementCounter() {
@@ -25,7 +26,10 @@ class _MyHomePageState extends State<MyHomePage> {
       bottom: false,
       child: Scaffold(
         appBar: MyAppbar(
-          title: Text(widget.title, style: TextStyle(fontFamily: 'Starjout'),),
+          title: Text(
+            "The Dart Side",
+            style: TextStyle(fontFamily: 'Starjout'),
+          ),
         ),
         body: Center(
           child: Column(
