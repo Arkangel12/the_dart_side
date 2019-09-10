@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:the_dart_side/src/episode7/episode7_page.dart';
 
 import 'episode3/episode3_page.dart';
 
@@ -33,6 +34,10 @@ class MenuPage extends StatelessWidget {
               RaisedButton(
                 child: Text("Episode III: Appbar Personalizada"),
                 onPressed: () => _openNewPage(context, Episode3Page()),
+              ),
+              RaisedButton(
+                child: Text("Episode VII: Responsive"),
+                onPressed: () => _openNewPage(context, Episode7Page()),
               ),
             ],
           ),
