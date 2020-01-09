@@ -34,7 +34,8 @@ class _ImplicitAnimationsState extends State<ImplicitAnimations> {
             "assets/images/background.jpeg",
             fit: BoxFit.cover,
           ),
-          Align(
+          AnimatedAlign(
+            duration: const Duration(seconds: 1),
             alignment: circular ? Alignment.topLeft : Alignment.bottomRight,
             child: Container(
               decoration: BoxDecoration(
