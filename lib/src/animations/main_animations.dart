@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:the_dart_side/src/animations/explicit/explicit_animations.dart';
 import 'package:the_dart_side/src/animations/implicit/implicit_animations.dart';
 import 'package:the_dart_side/src/animations/transition/transition_animations.dart';
 
@@ -28,6 +29,10 @@ class MainAnimations extends StatelessWidget {
               RaisedButton(
                 child: Text("Transition"),
                 onPressed: () => _openNewPage(context, TransitionAnimations()),
+              ),
+              RaisedButton(
+                child: Text("Explicit"),
+                onPressed: () => _openNewPage(context, ExplicitAnimations()),
               ),
             ],
           ),
