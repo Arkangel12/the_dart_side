@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 //import 'package:the_dart_side/src/animations2/implicitAnimations.dart';
 //import 'package:the_dart_side/src/episode7/episode7_page.dart';
 import 'package:the_dart_side/src/supernova/supernova_test.dart';
@@ -10,7 +11,6 @@ import 'package:the_dart_side/src/animations/main_animations.dart';
 import 'package:the_dart_side/src/custom_appbar/episode3_page.dart';
 import 'package:the_dart_side/src/multi_layout/episode8_page.dart';
 import 'package:the_dart_side/src/responsive/episode7_page.dart';
-
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -64,13 +64,24 @@ class MenuPage extends StatelessWidget {
               ),
               RaisedButton(
                 child: Text("Supernova"),
-                onPressed: () => _openNewPage(context, SupernovaTest()),
+                onPressed: () => _openNewPage(
+                  context,
+                  SupernovaTest(),
+                ),
               ),
-              RaisedButton(child: Text("Multilayout"),
-                onPressed: () => _openNewPage(context, Episode8Page()),),
+              RaisedButton(
+                child: Text("Multilayout"),
+                onPressed: () => _openNewPage(
+                  context,
+                  Episode8Page(),
+                ),
+              ),
               RaisedButton(
                 child: Text("Animations"),
-                onPressed: () => _openNewPage(context, MainAnimations()),
+                onPressed: () => _openNewPage(
+                  context,
+                  MainAnimations(),
+                ),
               ),
             ],
           ),
