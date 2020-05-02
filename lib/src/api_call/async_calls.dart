@@ -73,26 +73,45 @@ class AsyncCalls extends StatelessWidget {
 //          );
 //        },
 //      ),
-    body: Consumer<AlbumProvider>(
-      builder: (_, snapshot, __){
-        if( snapshot.albumList == null)
-          return Center(child: CircularProgressIndicator());
-
-        return ListView.builder(
-          itemCount: snapshot.albumList.length,
-          itemBuilder: (_, index) {
-            return ListTile(
-              leading: CircleAvatar(
-                backgroundImage:
-                NetworkImage(snapshot.albumList[index].thumbnailUrl),
-              ),
-              title: Text(snapshot.albumList[index].id.toString()),
-              subtitle: Text(snapshot.albumList[index].title),
-            );
-          },
-        );
-      },
-    ),
+      body: StreamBuilder<List<Album>>(
+        initialData: [],
+        stream: AlbumApiCall().getAlbums().asStream(),
+        builder: (_, snapshot) {
+          return ListView.builder(
+            itemCount: snapshot.data.length,
+            itemBuilder: (_, index) {
+              return ListTile(
+                leading: CircleAvatar(
+                  backgroundImage:
+                      NetworkImage(snapshot.data[index].thumbnailUrl),
+                ),
+                title: Text(snapshot.data[index].id.toString()),
+                subtitle: Text(snapshot.data[index].title),
+              );
+            },
+          );
+        },
+      ),
+//    body: Consumer<AlbumProvider>(
+//      builder: (_, snapshot, __){
+//        if( snapshot.albumList == null)
+//          return Center(child: CircularProgressIndicator());
+//
+//        return ListView.builder(
+//          itemCount: snapshot.albumList.length,
+//          itemBuilder: (_, index) {
+//            return ListTile(
+//              leading: CircleAvatar(
+//                backgroundImage:
+//                NetworkImage(snapshot.albumList[index].thumbnailUrl),
+//              ),
+//              title: Text(snapshot.albumList[index].id.toString()),
+//              subtitle: Text(snapshot.albumList[index].title),
+//            );
+//          },
+//        );
+//      },
+//    ),
     );
   }
 }
