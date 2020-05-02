@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:the_dart_side/src/api_call/albumProvider.dart';
+import 'package:the_dart_side/src/api_call/async_calls.dart';
 import 'package:the_dart_side/src/hackerclub/hackerClub.dart';
 
 //import 'package:the_dart_side/src/animations2/implicitAnimations.dart';
@@ -17,10 +20,17 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData.light(),
-      home: MenuPage(),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (_) => AlbumProvider()..getAlbums(),
+        )
+      ],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData.dark(),
+        home: MenuPage(),
+      ),
     );
   }
 }
@@ -55,13 +65,13 @@ class MenuPage extends StatelessWidget {
             children: [
               Image.asset('assets/images/dash_vader_white.png', height: 200),
               SizedBox(height: 20),
-              RaisedButton(
-                child: Text("Hola HackerClub"),
-                onPressed: () => _openNewPage(
-                  context,
-                  HackerClub(),
-                ),
-              ),
+//              RaisedButton(
+//                child: Text("Hola HackerClub"),
+//                onPressed: () => _openNewPage(
+//                  context,
+//                  HackerClub(),
+//                ),
+//              ),
 //              RaisedButton(
 //                child: Text("Appbar Personalizada"),
 //                onPressed: () => _openNewPage(context, Episode3Page()),
@@ -82,13 +92,13 @@ class MenuPage extends StatelessWidget {
 //                child: Text("Animaciones Implicitas"),
 ////                onPressed: () => _openNewPage(context, ImplicitAnimations()),
 //              ),
-              RaisedButton(
-                child: Text("Supernova"),
-                onPressed: () => _openNewPage(
-                  context,
-                  SupernovaTest(),
-                ),
-              ),
+//              RaisedButton(
+//                child: Text("Supernova"),
+//                onPressed: () => _openNewPage(
+//                  context,
+//                  SupernovaTest(),
+//                ),
+//              ),
 //              RaisedButton(
 //                child: Text("Multilayout"),
 //                onPressed: () => _openNewPage(
@@ -103,6 +113,13 @@ class MenuPage extends StatelessWidget {
 //                  MainAnimations(),
 //                ),
 //              ),
+              RaisedButton(
+                child: Text("API Call"),
+                onPressed: () => _openNewPage(
+                  context,
+                  AsyncCalls(),
+                ),
+              ),
             ],
           ),
         ),
