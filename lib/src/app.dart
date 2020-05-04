@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:the_dart_side/src/api_call/albumProvider.dart';
 import 'package:the_dart_side/src/api_call/async_calls.dart';
 import 'package:the_dart_side/src/hackerclub/hackerClub.dart';
+import 'package:the_dart_side/src/multiple_refresh/multiple_refresh.dart';
 
 //import 'package:the_dart_side/src/animations2/implicitAnimations.dart';
 //import 'package:the_dart_side/src/episode7/episode7_page.dart';
@@ -118,6 +119,13 @@ class MenuPage extends StatelessWidget {
                 onPressed: () => _openNewPage(
                   context,
                   AsyncCalls(),
+                ),
+              ),
+              RaisedButton(
+                child: Text("Multiple Refresh"),
+                onPressed: () => _openNewPage(
+                  context,
+                  MultipleRefresh(),
                 ),
               ),
             ],
