@@ -16,6 +16,7 @@ import 'package:the_dart_side/src/animations/main_animations.dart';
 import 'package:the_dart_side/src/custom_appbar/episode3_page.dart';
 import 'package:the_dart_side/src/multi_layout/episode8_page.dart';
 import 'package:the_dart_side/src/responsive/episode7_page.dart';
+import 'package:the_dart_side/src/ui_samples/curve_menu.dart';
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -122,7 +123,14 @@ class MenuPage extends StatelessWidget {
                 ),
               ),
               RaisedButton(
-                child: Text("Multiple Refresh"),
+                child: Text("Curve Menu"),
+                onPressed: () => _openNewPage(
+                  context,
+                  CurveMenu(),
+                ),
+              ),
+              RaisedButton(
+                child: Text("Multiple Refesh"),
                 onPressed: () => _openNewPage(
                   context,
                   MultipleRefresh(),
