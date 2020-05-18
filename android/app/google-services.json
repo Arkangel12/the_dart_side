@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "000",
+    "firebase_url": "YOUR_URL",
+    "project_id": "comethedartside",
+    "storage_bucket": "YOUR_URL"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:0000:android:00000",
+        "android_client_info": {
+          "package_name": "com.example.the_dart_side"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "YOUR_VALUE",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDojG-MuvBpFSKsHEoT_dQFJXng_VISods"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "YOUR_VALUE",
+              "client_type": 3
+            },
+            {
+              "client_id": "YOUR_VALUE",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.theDartSide"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

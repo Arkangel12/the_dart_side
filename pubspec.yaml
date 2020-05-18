@@ -4,7 +4,7 @@ description: Repositorio de ejemplos para en canal de The Dart Side de Argel Bej
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.2.2 <3.0.0"
+  sdk: ">=2.6.2 <3.0.0"
 
 dependencies:
   flutter:
@@ -12,7 +12,8 @@ dependencies:
 
   cupertino_icons: ^0.1.2
   http: any
-  provider: any
+  provider: 4.0.4
+  cloud_firestore: 0.13.5
 
 dev_dependencies:
   flutter_test:
