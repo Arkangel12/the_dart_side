@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:the_dart_side/src/animations/implicit/implicit_animations.dart';
 import 'package:the_dart_side/src/api_call/albumProvider.dart';
 import 'package:the_dart_side/src/api_call/async_calls.dart';
+import 'package:the_dart_side/src/firestore/authentication/auth_screen.dart';
 import 'package:the_dart_side/src/hackerclub/hackerClub.dart';
 import 'package:the_dart_side/src/multiple_refresh/multiple_refresh.dart';
 
@@ -143,6 +144,13 @@ class MenuPage extends StatelessWidget {
                   onPressed: () => _openNewPage(
                     context,
                     SamplesFirestore(),
+                  ),
+                ),
+                RaisedButton(
+                  child: Text("Firebase Auth"),
+                  onPressed: () => _openNewPage(
+                    context,
+                    AuthScreen(),
                   ),
                 ),
               ],
