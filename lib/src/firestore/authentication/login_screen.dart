@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:the_dart_side/src/firestore/authentication/auth_service.dart';
 
 class LoginScreen extends StatefulWidget {
 
@@ -11,6 +12,7 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   //TODO agregar authService
+  final AuthService _authService = AuthService();
   final _formKey = GlobalKey<FormState>();
 
   String error = '';
@@ -56,7 +58,14 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   onPressed: () async {
                     if(_formKey.currentState.validate()){
-                      //TODO add registerWithEmailAndPassword
+                      //TODO add loginWithEmailAndPassword
+                      bool success = await _authService
+                          .signInUserWithEmailAndPassword(email, password);
+                      if (!success) {
+                        setState(() {
+                          error = 'Sucedió un error';
+                        });
+                      }
                     }
                   }
               ),

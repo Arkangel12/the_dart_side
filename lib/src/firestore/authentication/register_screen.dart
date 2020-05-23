@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:the_dart_side/src/firestore/authentication/auth_service.dart';
 
 class RegisterScreen extends StatefulWidget {
-
   final Function toggleView;
-  RegisterScreen({ this.toggleView });
+
+  RegisterScreen({this.toggleView});
 
   @override
   _RegisterScreenState createState() => _RegisterScreenState();
@@ -11,6 +12,7 @@ class RegisterScreen extends StatefulWidget {
 
 class _RegisterScreenState extends State<RegisterScreen> {
   //TODO agregar authService
+  final AuthService _authService = AuthService();
   final _formKey = GlobalKey<FormState>();
 
   String error = '';
@@ -28,9 +30,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
             children: <Widget>[
               SizedBox(height: 20.0),
               TextFormField(
-                decoration: InputDecoration(
-                    hintText: 'Correo Electrónico'
-                ),
+                decoration: InputDecoration(hintText: 'Correo Electrónico'),
                 validator: (val) => val.isEmpty ? 'Ingresa un correo' : null,
                 onChanged: (val) {
                   setState(() => email = val);
@@ -38,11 +38,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
               ),
               SizedBox(height: 20.0),
               TextFormField(
-                decoration: InputDecoration(
-                    hintText: 'Contraseña'
-                ),
+                decoration: InputDecoration(hintText: 'Contraseña'),
                 obscureText: true,
-                validator: (val) => val.length < 6 ? 'Password muy corto debe ser de 6+ caracteres' : null,
+                validator: (val) => val.length < 6
+                    ? 'Password muy corto debe ser de 6+ caracteres'
+                    : null,
                 onChanged: (val) {
                   setState(() => password = val);
                 },
@@ -55,11 +55,17 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     style: TextStyle(color: Colors.white),
                   ),
                   onPressed: () async {
-                    if(_formKey.currentState.validate()){
+                    if (_formKey.currentState.validate()) {
                       //TODO add registerWithEmailAndPassword
+                      bool success = await _authService
+                          .createUserWithEmailAndPassword(email, password);
+                      if (!success) {
+                        setState(() {
+                          error = 'Sucedió un error';
+                        });
+                      }
                     }
-                  }
-              ),
+                  }),
               SizedBox(height: 12.0),
               Text(
                 error,
