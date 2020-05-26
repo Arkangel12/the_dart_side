@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
-import 'package:the_dart_side/src/firestore/user.dart';
+import 'package:the_dart_side/src/firebase/firestore/user.dart';
 
 class MyLogic {
   ValueNotifier<List<User>> users = ValueNotifier(null);

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:the_dart_side/src/firestore/authentication/auth_service.dart';
+import 'auth_service.dart';
 
 class RegisterScreen extends StatefulWidget {
   final Function toggleView;
@@ -40,9 +40,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
               TextFormField(
                 decoration: InputDecoration(hintText: 'Contraseña'),
                 obscureText: true,
-                validator: (val) => val.length < 6
-                    ? 'Password muy corto debe ser de 6+ caracteres'
-                    : null,
+                validator: (val) => val.length < 6 ? 'Password muy corto debe ser de 6+ caracteres' : null,
                 onChanged: (val) {
                   setState(() => password = val);
                 },
@@ -57,8 +55,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   onPressed: () async {
                     if (_formKey.currentState.validate()) {
                       //TODO add registerWithEmailAndPassword
-                      bool success = await _authService
-                          .createUserWithEmailAndPassword(email, password);
+                      bool success = await _authService.createUserWithEmailAndPassword(email, password);
                       if (!success) {
                         setState(() {
                           error = 'Sucedió un error';

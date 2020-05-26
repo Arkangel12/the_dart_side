@@ -1,9 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:the_dart_side/src/firestore/authentication/auth_service.dart';
-import 'package:the_dart_side/src/firestore/authentication/login_screen.dart';
-import 'package:the_dart_side/src/firestore/authentication/register_screen.dart';
-import 'package:the_dart_side/src/firestore/authentication/welcome_screen.dart';
+
+import 'auth_service.dart';
+import 'login_screen.dart';
+import 'register_screen.dart';
+import 'welcome_screen.dart';
 
 class AuthScreen extends StatefulWidget {
   @override

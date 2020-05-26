@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:the_dart_side/src/firebase/firestore/pagination/pagination_view.dart';
 import 'sample1/sample1_firestore.dart';
 import 'sample2/sample2_firestore.dart';
 
@@ -40,6 +41,13 @@ class _SamplesFirestoreState extends State<SamplesFirestore> {
                   onPressed: () => _openNewPage(
                     context,
                     Sample2Firestore(),
+                  ),
+                ),
+                RaisedButton(
+                  child: Text("Sample3 Firestore Pagination"),
+                  onPressed: () => _openNewPage(
+                    context,
+                    PaginationView(),
                   ),
                 ),
               ],

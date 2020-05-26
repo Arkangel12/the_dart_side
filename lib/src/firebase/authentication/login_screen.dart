@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:the_dart_side/src/firestore/authentication/auth_service.dart';
+
+import 'auth_service.dart';
 
 class LoginScreen extends StatefulWidget {
-
   final Function toggleView;
-  LoginScreen({ this.toggleView });
+  LoginScreen({this.toggleView});
 
   @override
   _LoginScreenState createState() => _LoginScreenState();
@@ -30,9 +30,7 @@ class _LoginScreenState extends State<LoginScreen> {
             children: <Widget>[
               SizedBox(height: 20.0),
               TextFormField(
-                decoration: InputDecoration(
-                    hintText: 'Correo Electrónico'
-                ),
+                decoration: InputDecoration(hintText: 'Correo Electrónico'),
                 validator: (val) => val.isEmpty ? 'Ingresa un correo' : null,
                 onChanged: (val) {
                   setState(() => email = val);
@@ -40,9 +38,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               SizedBox(height: 20.0),
               TextFormField(
-                decoration: InputDecoration(
-                  hintText: 'Contraseña'
-                ),
+                decoration: InputDecoration(hintText: 'Contraseña'),
                 obscureText: true,
                 validator: (val) => val.length < 6 ? 'Password muy corto debe ser de 6+ caracteres' : null,
                 onChanged: (val) {
@@ -57,18 +53,16 @@ class _LoginScreenState extends State<LoginScreen> {
                     style: TextStyle(color: Colors.white),
                   ),
                   onPressed: () async {
-                    if(_formKey.currentState.validate()){
+                    if (_formKey.currentState.validate()) {
                       //TODO add loginWithEmailAndPassword
-                      bool success = await _authService
-                          .signInUserWithEmailAndPassword(email, password);
+                      bool success = await _authService.signInUserWithEmailAndPassword(email, password);
                       if (!success) {
                         setState(() {
                           error = 'Sucedió un error';
                         });
                       }
                     }
-                  }
-              ),
+                  }),
               SizedBox(height: 12.0),
               Text(
                 error,
