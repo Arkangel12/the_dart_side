@@ -19,6 +19,7 @@ import 'package:the_dart_side/src/custom_appbar/episode3_page.dart';
 import 'package:the_dart_side/src/multi_layout/episode8_page.dart';
 import 'package:the_dart_side/src/responsive/episode7_page.dart';
 import 'package:the_dart_side/src/ui_samples/curve_menu.dart';
+import 'package:the_dart_side/src/wad/navigation_rail_example.dart';
 
 import 'firestore/samples_firestore.dart';
 
@@ -151,6 +152,13 @@ class MenuPage extends StatelessWidget {
                   onPressed: () => _openNewPage(
                     context,
                     AuthScreen(),
+                  ),
+                ),
+                RaisedButton(
+                  child: Text("Navigation Rail Example"),
+                  onPressed: () => _openNewPage(
+                    context,
+                    NavigationRailExample(),
                   ),
                 ),
               ],
