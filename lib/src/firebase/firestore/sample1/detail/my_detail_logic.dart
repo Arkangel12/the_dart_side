@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:the_dart_side/src/firestore/sample1/debouncer.dart';
-import 'package:the_dart_side/src/firestore/user.dart';
+import 'package:the_dart_side/src/firebase/firestore/debouncer.dart';
+import 'package:the_dart_side/src/firebase/firestore/user.dart';
 
 class MyDetailLogic {
   MyDetailLogic(this.user);

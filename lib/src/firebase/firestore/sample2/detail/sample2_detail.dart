@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:the_dart_side/src/firestore/user.dart';
-
+import 'package:the_dart_side/src/firebase/firestore/user.dart';
 import 'my_detail_logic.dart';
 
 const separator = const SizedBox(

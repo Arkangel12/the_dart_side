@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:the_dart_side/src/animations/implicit/implicit_animations.dart';
 import 'package:the_dart_side/src/api_call/albumProvider.dart';
 import 'package:the_dart_side/src/api_call/async_calls.dart';
-import 'package:the_dart_side/src/firestore/authentication/auth_screen.dart';
+import 'package:the_dart_side/src/firebase/samples_firebase.dart';
 import 'package:the_dart_side/src/hackerclub/hackerClub.dart';
 import 'package:the_dart_side/src/multiple_refresh/multiple_refresh.dart';
 
@@ -20,8 +20,6 @@ import 'package:the_dart_side/src/multi_layout/episode8_page.dart';
 import 'package:the_dart_side/src/responsive/episode7_page.dart';
 import 'package:the_dart_side/src/ui_samples/curve_menu.dart';
 import 'package:the_dart_side/src/wad/navigation_rail_example.dart';
-
-import 'firestore/samples_firestore.dart';
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -141,17 +139,10 @@ class MenuPage extends StatelessWidget {
                   ),
                 ),
                 RaisedButton(
-                  child: Text("Firestore"),
+                  child: Text("Firebase"),
                   onPressed: () => _openNewPage(
                     context,
-                    SamplesFirestore(),
-                  ),
-                ),
-                RaisedButton(
-                  child: Text("Firebase Auth"),
-                  onPressed: () => _openNewPage(
-                    context,
-                    AuthScreen(),
+                    SamplesFirebase(),
                   ),
                 ),
                 RaisedButton(

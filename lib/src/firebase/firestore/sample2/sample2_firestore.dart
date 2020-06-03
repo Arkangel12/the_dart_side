@@ -1,20 +1,27 @@
 import 'package:flutter/material.dart';
-import 'package:the_dart_side/src/firestore/sample1/my_logic.dart';
-import 'package:the_dart_side/src/firestore/sample1/detail/sample1_detail.dart';
-import 'package:the_dart_side/src/firestore/user.dart';
+import 'package:the_dart_side/src/firebase/firestore/user.dart';
 
-class Sample1Firestore extends StatefulWidget {
+import 'detail/sample2_detail.dart';
+import 'my_logic.dart';
+
+class Sample2Firestore extends StatefulWidget {
   @override
   _Sample1FirestoreState createState() => _Sample1FirestoreState();
 }
 
-class _Sample1FirestoreState extends State<Sample1Firestore> {
+class _Sample1FirestoreState extends State<Sample2Firestore> {
   final myLogic = MyLogic();
 
   @override
   void initState() {
     myLogic.getUsers();
     super.initState();
+  }
+
+  @override
+  void dispose() {
+    myLogic.cancel();
+    super.dispose();
   }
 
   @override
@@ -26,12 +33,9 @@ class _Sample1FirestoreState extends State<Sample1Firestore> {
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
         onPressed: () async {
-          final result = await Navigator.of(context).push(MaterialPageRoute(
-            builder: (_) => Sample1Detail(),
+          Navigator.of(context).push(MaterialPageRoute(
+            builder: (_) => Sample2Detail(),
           ));
-          if (result != null && result) {
-            myLogic.getUsers();
-          }
         },
       ),
       body: Center(
@@ -48,13 +52,10 @@ class _Sample1FirestoreState extends State<Sample1Firestore> {
                       title: Text(users[index].name),
                       subtitle: Text(users[index].email),
                       trailing: Icon(Icons.person),
-                      onTap: () async {
-                        final result = await Navigator.of(context).push(MaterialPageRoute(
-                          builder: (_) => Sample1Detail(user: users[index]),
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                          builder: (_) => Sample2Detail(user: users[index]),
                         ));
-                        if (result != null && result) {
-                          myLogic.getUsers();
-                        }
                       },
                     ),
                   )
