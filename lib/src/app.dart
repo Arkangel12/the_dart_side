@@ -20,6 +20,7 @@ import 'package:the_dart_side/src/multi_layout/episode8_page.dart';
 import 'package:the_dart_side/src/responsive/episode7_page.dart';
 import 'package:the_dart_side/src/ui_samples/curve_menu.dart';
 import 'package:the_dart_side/src/wad/aspect_ratio_example.dart';
+import 'package:the_dart_side/src/wad/backdrop_filter_example.dart';
 import 'package:the_dart_side/src/wad/navigation_rail_example.dart';
 
 class MyApp extends StatelessWidget {
@@ -158,6 +159,13 @@ class MenuPage extends StatelessWidget {
                   onPressed: () => _openNewPage(
                     context,
                     AspectRatioExample(),
+                  ),
+                ),
+                RaisedButton(
+                  child: Text("Backdrop Filter Example"),
+                  onPressed: () => _openNewPage(
+                    context,
+                    BackDropFilterExample(),
                   ),
                 ),
               ],
