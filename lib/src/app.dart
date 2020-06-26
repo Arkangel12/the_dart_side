@@ -21,6 +21,7 @@ import 'package:the_dart_side/src/responsive/episode7_page.dart';
 import 'package:the_dart_side/src/ui_samples/curve_menu.dart';
 import 'package:the_dart_side/src/wad/aspect_ratio_example.dart';
 import 'package:the_dart_side/src/wad/backdrop_filter_example.dart';
+import 'package:the_dart_side/src/wad/hero/hero_example.dart';
 import 'package:the_dart_side/src/wad/navigation_rail_example.dart';
 
 class MyApp extends StatelessWidget {
@@ -75,6 +76,13 @@ class MenuPage extends StatelessWidget {
               children: [
                 Image.asset('assets/images/dash_vader_white.png', height: 200),
                 SizedBox(height: 20),
+                RaisedButton(
+                  child: Text("Hero Example"),
+                  onPressed: () => _openNewPage(
+                    context,
+                    HeroExample(),
+                  ),
+                ),
                 RaisedButton(
                   child: Text("Hola HackerClub"),
                   onPressed: () => _openNewPage(
