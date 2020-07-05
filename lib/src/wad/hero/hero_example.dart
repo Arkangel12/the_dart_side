@@ -14,22 +14,31 @@ class _HeroExampleState extends State<HeroExample> {
         title: Text('Hero Example'),
       ),
       body: SafeArea(
-        child: ListView.builder(
+        child: ListView.separated(
           padding: const EdgeInsets.only(top: 20),
-          itemCount: 1,
+          itemCount: 10,
           itemBuilder: (_, index) => ListTile(
             onTap: () => Navigator.of(context).push(
               MaterialPageRoute(
-                builder: (_) => CatchHero(name: 'Dash Vader',),
+                builder: (_) => CatchHero(
+                  id: index,
+                  name: 'Dash Vader',
+                ),
               ),
             ),
             leading: Container(
               color: Colors.white,
-              child: Image.asset(
-                'assets/images/dash_vader_white.png',
+              child: Hero(
+                tag: 'tag$index',
+                child: Image.asset(
+                  'assets/images/dash_vader_white.png',
+                ),
               ),
             ),
-            title: Text('Dash Vader'),
+            title: Text('Dash Vader $index'),
+          ),
+          separatorBuilder: (BuildContext context, int index) => Divider(
+            color: Colors.white,
           ),
         ),
       ),
