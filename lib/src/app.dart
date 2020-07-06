@@ -21,6 +21,7 @@ import 'package:the_dart_side/src/responsive/episode7_page.dart';
 import 'package:the_dart_side/src/ui_samples/curve_menu.dart';
 import 'package:the_dart_side/src/wad/aspect_ratio_example.dart';
 import 'package:the_dart_side/src/wad/backdrop_filter_example.dart';
+import 'package:the_dart_side/src/wad/fitted_box_example.dart';
 import 'package:the_dart_side/src/wad/hero/hero_example.dart';
 import 'package:the_dart_side/src/wad/navigation_rail_example.dart';
 
@@ -77,6 +78,13 @@ class MenuPage extends StatelessWidget {
                 Image.asset('assets/images/dash_vader_white.png', height: 200),
                 SizedBox(height: 20),
                 RaisedButton(
+                  child: Text("FittedBox Example"),
+                  onPressed: () => _openNewPage(
+                    context,
+                    FittedBoxExample(),
+                  ),
+                ),
+                RaisedButton(
                   child: Text("Hero Example"),
                   onPressed: () => _openNewPage(
                     context,
@@ -94,7 +102,7 @@ class MenuPage extends StatelessWidget {
                   child: Text("Appbar Personalizada"),
                   onPressed: () => _openNewPage(context, Episode3Page()),
                 ),
-                RaisedButton(
+                /*RaisedButton(
                   child: Text("Responsive"),
                   onPressed: () => _openNewPage(context, Episode7Page()),
                 ),
@@ -175,7 +183,7 @@ class MenuPage extends StatelessWidget {
                     context,
                     BackDropFilterExample(),
                   ),
-                ),
+                ),*/
               ],
             ),
           ),
