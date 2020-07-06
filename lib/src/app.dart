@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:the_dart_side/src/animations/implicit/implicit_animations.dart';
 import 'package:the_dart_side/src/api_call/albumProvider.dart';
 import 'package:the_dart_side/src/api_call/async_calls.dart';
+import 'package:the_dart_side/src/clips/clips_example.dart';
 import 'package:the_dart_side/src/firebase/samples_firebase.dart';
 import 'package:the_dart_side/src/hackerclub/hackerClub.dart';
 import 'package:the_dart_side/src/multiple_refresh/multiple_refresh.dart';
@@ -77,6 +78,13 @@ class MenuPage extends StatelessWidget {
               children: [
                 Image.asset('assets/images/dash_vader_white.png', height: 200),
                 SizedBox(height: 20),
+                RaisedButton(
+                  child: Text("Clips Example"),
+                  onPressed: () => _openNewPage(
+                    context,
+                    ClipsExample(),
+                  ),
+                ),
                 RaisedButton(
                   child: Text("FittedBox Example"),
                   onPressed: () => _openNewPage(
