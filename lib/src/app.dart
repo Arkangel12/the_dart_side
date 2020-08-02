@@ -23,8 +23,10 @@ import 'package:the_dart_side/src/ui_samples/curve_menu.dart';
 import 'package:the_dart_side/src/wad/aspect_ratio_example.dart';
 import 'package:the_dart_side/src/wad/backdrop_filter_example.dart';
 import 'package:the_dart_side/src/wad/fitted_box_example.dart';
+import 'package:the_dart_side/src/wad/fractionally_sized_box_example.dart';
 import 'package:the_dart_side/src/wad/hero/hero_example.dart';
 import 'package:the_dart_side/src/wad/navigation_rail_example.dart';
+import 'package:the_dart_side/src/wad/wrap_example.dart';
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -79,6 +81,20 @@ class MenuPage extends StatelessWidget {
                 Image.asset('assets/images/dash_vader_white.png', height: 200),
                 SizedBox(height: 20),
                 RaisedButton(
+                  child: Text("FractionallySizedBox Example"),
+                  onPressed: () => _openNewPage(
+                    context,
+                    FractionallySizedBoxExample(),
+                  ),
+                ),
+                RaisedButton(
+                  child: Text("Wrap Example"),
+                  onPressed: () => _openNewPage(
+                    context,
+                    WrapExample(),
+                  ),
+                ),
+                RaisedButton(
                   child: Text("Clips Example"),
                   onPressed: () => _openNewPage(
                     context,
@@ -92,7 +108,7 @@ class MenuPage extends StatelessWidget {
                     FittedBoxExample(),
                   ),
                 ),
-                RaisedButton(
+                /*RaisedButton(
                   child: Text("Hero Example"),
                   onPressed: () => _openNewPage(
                     context,
@@ -110,7 +126,7 @@ class MenuPage extends StatelessWidget {
                   child: Text("Appbar Personalizada"),
                   onPressed: () => _openNewPage(context, Episode3Page()),
                 ),
-                /*RaisedButton(
+                RaisedButton(
                   child: Text("Responsive"),
                   onPressed: () => _openNewPage(context, Episode7Page()),
                 ),
