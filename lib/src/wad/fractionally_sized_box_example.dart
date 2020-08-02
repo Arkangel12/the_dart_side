@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:the_dart_side/src/wad/fitted_box_example.dart';
 
 class FractionallySizedBoxExample extends StatefulWidget {
   @override

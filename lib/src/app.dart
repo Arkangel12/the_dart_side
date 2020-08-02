@@ -7,6 +7,7 @@ import 'package:the_dart_side/src/clips/clips_example.dart';
 import 'package:the_dart_side/src/firebase/samples_firebase.dart';
 import 'package:the_dart_side/src/hackerclub/hackerClub.dart';
 import 'package:the_dart_side/src/multiple_refresh/multiple_refresh.dart';
+import 'package:the_dart_side/src/pad/slidable.dart';
 
 //import 'package:the_dart_side/src/animations2/implicitAnimations.dart';
 //import 'package:the_dart_side/src/episode7/episode7_page.dart';
@@ -80,6 +81,13 @@ class MenuPage extends StatelessWidget {
               children: [
                 Image.asset('assets/images/dash_vader_white.png', height: 200),
                 SizedBox(height: 20),
+                RaisedButton(
+                  child: Text("Package Slidable Example"),
+                  onPressed: () => _openNewPage(
+                    context,
+                    PackageSlidableExample(),
+                  ),
+                ),
                 RaisedButton(
                   child: Text("FractionallySizedBox Example"),
                   onPressed: () => _openNewPage(
